@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import BlogCard from "./components/blog-card"
+// import BlogCard from "./components/blog-card"
 import PostModal from "./components/post-modal"
 import "./blog.css"
 
@@ -23,12 +23,12 @@ function App() {
   ])
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const handleAddPost = (newPost) => {
-    setPosts([{ ...newPost, id: Date.now() }, ...posts])
+  // 投稿の追加用の関数
+  const handleAddPost = (  ) => {
   }
 
-  const handleDeletePost = (id) => {
-    setPosts(posts.filter((post) => post.id !== id))
+  // 投稿の削除用の関数
+  const handleDeletePost = (  ) => {
   }
 
   // postsのデバック用 (気にしないで)
@@ -47,13 +47,11 @@ function App() {
     
       <main className="main">
         <div className="posts-container">
-          {posts.map((post) => (
-            <BlogCard key={post.id} post={post} onDelete={handleDeletePost} />
-          ))}
+          {/* postsの表示はここで行ってください */}
         </div>
       </main>
 
-      { isModalOpen && <PostModal onClose={() => setIsModalOpen(false)} onSubmit={handleAddPost} /> }
+      { isModalOpen && <PostModal onClose={() => setIsModalOpen(false)} /> }
     </div>
   )
 }

@@ -1,17 +1,10 @@
 import { useState } from "react"
 
-function PostModal({ onClose, onSubmit }) {
+function PostModal({ onClose }) {
   const [ title, setTitle ] = useState("")
   const [ content, setContent ] = useState("")
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    if (title.trim() && content.trim()) {
-      onSubmit({ title, content })
-      setTitle("")
-      setContent("")
-      onClose()
-    }
   }
 
   
